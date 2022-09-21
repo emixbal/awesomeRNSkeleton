@@ -1,0 +1,1 @@
+export const BASE_DATA_URL = `http://192.168.2.114:5000`;
