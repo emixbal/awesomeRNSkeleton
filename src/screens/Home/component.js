@@ -5,7 +5,8 @@ import {
 
 const Home = (props) => {
   const {
-    navigation
+    navigation,
+    handleRemoveAccessToken,
   } = props
 
   return (
@@ -14,7 +15,7 @@ const Home = (props) => {
         This is home
       </Text>
       <Button
-        onPress={() => navigation.navigate("Login", {})}
+        onPress={() => handleRemoveAccessToken()}
       >
         Logout
       </Button>

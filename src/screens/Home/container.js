@@ -5,6 +5,8 @@ import {
     changeLoading
 } from './actions'
 
+import { handleRemoveAccessToken } from "../../Router/actions";
+
 
 const mapStateToProps = (state) => ({
     ...state.home,
@@ -12,7 +14,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
     // ur actions,
-    changeLoading
+    changeLoading,
+    handleRemoveAccessToken,
 }
 
 export default connect(

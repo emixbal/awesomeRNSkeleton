@@ -24,7 +24,7 @@ const Router = ({
                 initialRouteName="Home"
             >
                 {
-                    (accessToken == "") ? 
+                    (!accessToken) ? 
                     (
                         <>
                             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />

@@ -27,18 +27,32 @@ export const handleCheckAccessToken = () => {
   return async (dispatch, getState) => {
     try {
       const accessToken = await AsyncStorage.getItem('@access_token')
-      if (typeof accessToken !== 'undefined'){
-        if(accessToken!=""){
+      if (typeof accessToken !== 'undefined') {
+        if (accessToken != "") {
           dispatch(changeAccessToken(accessToken))
           return
         }
       }
-      
+
     } catch (e) {
       console.log("err getData access token");
       console.log(e);
     }
 
+    return
+  }
+}
+
+export const handleRemoveAccessToken = () => {
+  return async (dispatch, getState) => {
+    try {
+      await AsyncStorage.removeItem('@access_token')
+      dispatch(changeAccessToken(''))
+      return
+    } catch (e) {
+      console.log("err handleRemoveAccessToken");
+      console.log(e);
+    }
     return
   }
 }
