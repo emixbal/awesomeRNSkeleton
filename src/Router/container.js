@@ -2,17 +2,17 @@ import { connect } from 'react-redux'
 import App from './component'
 
 import {
-    changeLoading
+    handleCheckAccessToken
 } from './actions'
 
 
 const mapStateToProps = (state) => ({
-    ...state.home,
+    ...state.router,
 })
 
 const mapDispatchToProps = {
     // ur actions,
-    changeLoading
+    handleCheckAccessToken
 }
 
 export default connect(

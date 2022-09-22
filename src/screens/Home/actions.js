@@ -1,8 +1,10 @@
+
+
 const key = "HOME"
 
 export const type = {
   RESET: `${key}_RESET`,
-  CHANGE_LOADING: `${key}_CHANGE_LOADING`,
+  changeLoading: `${key}_changeLoading`,
 };
 
 export const reset = (value) => ({
@@ -10,8 +12,8 @@ export const reset = (value) => ({
   value,
 });
 
-export const change_loading = (value) => ({
-  type: type.CHANGE_LOADING,
+export const changeLoading = (value) => ({
+  type: type.changeLoading,
   value,
 });
 

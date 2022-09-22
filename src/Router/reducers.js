@@ -6,10 +6,15 @@ const main = (state = defaultState(), action) => {
             return {
                 ...defaultState(),
             };
-        case type.changeLoading:
+        case type.CHANGE_LOADING:
             return {
                 ...state,
                 isLoading: action.value
+            };
+        case type.CHANGE_ACCESS_TOKEN:
+            return {
+                ...state,
+                accessToken: action.value
             };
         default:
             return state
@@ -18,6 +23,7 @@ const main = (state = defaultState(), action) => {
 
 const defaultState = () => ({
     isLoading: false,
+    accessToken: '',
 })
 
 export default main

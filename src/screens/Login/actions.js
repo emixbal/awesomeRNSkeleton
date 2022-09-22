@@ -4,6 +4,9 @@ import { BASE_DATA_URL } from "../../../config";
 import { Post } from "../../helpers/ajax";
 import * as RootNavigation from '../../RootNavigation';
 
+// import actions from another screens
+import { changeAccessToken } from "../../Router/actions";
+
 const key = "LOGIN"
 
 export const type = {
@@ -64,7 +67,7 @@ export const handleSignIn = () => {
     }
 
     if(await storeData(res.access_token)){
-      RootNavigation.navigate('Home', {});
+      dispatch(changeAccessToken(res.access_token))
       return
     }
 

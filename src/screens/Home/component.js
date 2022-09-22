@@ -5,18 +5,18 @@ import {
 
 const Home = (props) => {
   const {
-    navigation, isLoading
+    navigation
   } = props
 
   return (
     <Box>
       <Text>
-        This is home {isLoading ? "true" : "false"}
+        This is home
       </Text>
       <Button
         onPress={() => navigation.navigate("Login", {})}
       >
-        Klik aku
+        Logout
       </Button>
     </Box>
   );
