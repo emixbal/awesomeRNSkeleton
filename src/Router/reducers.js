@@ -16,6 +16,11 @@ const main = (state = defaultState(), action) => {
                 ...state,
                 accessToken: action.value
             };
+        case type.CHANGE_SPLASH_SHOW:
+            return {
+                ...state,
+                isSplashShow: action.value
+            };
         default:
             return state
     }
@@ -23,6 +28,7 @@ const main = (state = defaultState(), action) => {
 
 const defaultState = () => ({
     isLoading: false,
+    isSplashShow: true,
     accessToken: '',
 })
 

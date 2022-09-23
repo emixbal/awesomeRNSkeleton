@@ -5,10 +5,12 @@ import logger from "redux-logger";
 // screens
 import { reducers as home } from "./screens/Home";
 import { reducers as login } from "./screens/Login";
+import { reducers as splash } from "./screens/Splash";
+
 import { reducers as router } from "./Router";
 
 const combine = combineReducers({
-    router, home, login,
+    router, splash, home, login,
 })
 
 const store = createStore(

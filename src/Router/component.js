@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import Splash from '../screens/Splash'
 import Home from '../screens/Home'
 import Login from '../screens/Login'
 import { navigationRef } from '../RootNavigation';
@@ -9,19 +10,27 @@ import { navigationRef } from '../RootNavigation';
 const Stack = createNativeStackNavigator();
 
 const Router = ({
-    //data
+    //datas
     accessToken,
-    //action
+    isSplashShow,
+    //actions
     handleCheckAccessToken,
 }) => {
     useEffect(() => {
         handleCheckAccessToken()
     });
+
+    if(isSplashShow){
+        return (
+            <>
+                <Splash />
+            </>
+        )
+    }
     
     return (
         <NavigationContainer ref={navigationRef}>
             <Stack.Navigator
-                initialRouteName="Home"
             >
                 {
                     (!accessToken) ? 
@@ -29,7 +38,7 @@ const Router = ({
                         <>
                             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
                         </>
-                    ) : 
+                    ) :
                     (
                         <>
                             <Stack.Screen name="Home" component={Home} />

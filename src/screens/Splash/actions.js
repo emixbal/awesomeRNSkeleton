@@ -1,6 +1,6 @@
 
 
-const key = "HOME"
+const key = "SPLASH"
 
 export const type = {
   RESET: `${key}_RESET`,
